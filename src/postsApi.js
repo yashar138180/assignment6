@@ -1,6 +1,7 @@
-export async function fetchPosts() {
+export async function fetchPosts(signal) {
   const response = await fetch(
-    "https://jsonplaceholder.typicode.com/posts"
+    "https://jsonplaceholder.typicode.com/posts",
+    { signal }
   );
 
   if (!response.ok) {
