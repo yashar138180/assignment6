@@ -1,16 +1,35 @@
-# React + Vite
+# Assignment 6 - Post Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Description
+This project is a React Post Dashboard built with Vite.
 
-Currently, two official plugins are available:
+The application fetches posts from an API and allows users
+to filter posts by title.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Fetch posts using Fetch API
+- Manage asynchronous state with useReducer
+- Fetch data on mount using useEffect
+- Filter posts using a controlled input and useState
+- Display loading, error, and empty states
+- Render posts using reusable React components
 
-## React Compiler
+## File Organization
+- src/api/postsApi.js: Fetches posts from the API
+- src/reducers/postsReducer.js: Manages asynchronous state
+- src/components/Post.jsx: Displays a single post
+- src/components/PostList.jsx: Displays the list of posts
+- src/components/FilterForm.jsx: Provides the title filter
+- src/App.jsx: Connects components and manages state
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Challenges
+The main challenges were managing asynchronous data,
+handling loading and error states, and organizing components.
 
-## Expanding the Oxlint configuration
+I also fixed an import path issue related to postsApi.js.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Technologies
+- React
+- JavaScript
+- Vite
+- CSS
