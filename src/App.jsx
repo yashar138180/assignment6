@@ -1,3 +1,5 @@
+import PostList from "./components/PostList";
+import FilterForm from "./components/FilterForm";
 import { useEffect, useReducer, useState } from "react";
 import { fetchPosts } from "./api/postsApi";
 import { initialState, postsReducer } from "./reducers/postsReducer";
@@ -48,12 +50,7 @@ function App() {
     <div>
       <h1>Post Dashboard</h1>
 
-      <input
-        type="text"
-        placeholder="Filter posts by title"
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-      />
+    <FilterForm filter={filter} setFilter={setFilter} />
 
       {state.loading && <p>Loading posts...</p>}
 
@@ -64,14 +61,7 @@ function App() {
       )}
 
       {!state.loading && !state.error && (
-        <div>
-          {filteredPosts.map((post) => (
-            <div key={post.id}>
-              <h2>{post.title}</h2>
-              <p>{post.body}</p>
-            </div>
-          ))}
-        </div>
+        <PostList posts={filteredPosts} />
       )}
     </div>
   );
